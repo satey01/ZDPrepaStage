@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example HTML with JavaScript code</title>
+  </head>
+  <body>
+    <h1>Example HTML with JavaScript code</h1>
+    <button onclick="sendHttpRequest()">Send HTTP request</button>
+    <script>
+      function sendHttpRequest() {
+        const request = new XMLHttpRequest();
+        const url = "http://localhost:30010/remote/object/property";
+        const method = "PUT";
+        const objectPath = "/MyRemoteControl/Maps/BaseLevel.BaseLevel:PersistentLevel.LorenzoCube_Actor_C_0";
+        const access = "READ_ACCESS";
+        const propertyName = "TargetValue";
+
+        const data = {
+          objectPath: objectPath,
+          access: access,
+          propertyName: propertyName,
+        };
+
+        const jsonBody = JSON.stringify(data);
+
+        request.open(method, url);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.onload = function () {
+          if (request.status >= 200 && request.status < 300) {
+            console.log(request.responseText);
+          } else {
+            console.error(request.statusText);
+          }
+        };
+        request.onerror = function () {
+          console.error("Network error");
+        };
+        request.send(jsonBody);
+      }
+    </script>
+  </body>
+</html>
