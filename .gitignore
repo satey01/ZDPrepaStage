@@ -73,3 +73,4 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 Plugins/PanoramicOnSphere/Resources/Video/pano.mp4
+Plugins/PanoramicOnSphere/Content/Video/pano.uasset

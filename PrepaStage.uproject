@@ -77,6 +77,14 @@
 				"Win64",
 				"Linux"
 			]
+		},
+		{
+			"Name": "azrguzfui",
+			"Enabled": false
+		},
+		{
+			"Name": "Imported_3DChars",
+			"Enabled": false
 		}
 	]
 }
